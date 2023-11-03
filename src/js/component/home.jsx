@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 //create your first component
 const Home = () => {
 	
-	/*useEffect(() => {
+	useEffect(() => {
 		setRed()
-	})*/
+	}, []);
 
 	const setRed = () => {
         setTimeout(() => {
@@ -41,9 +41,6 @@ const Home = () => {
 			<div className={redOff}></div>
 			<div className={yellowOff}></div>
 			<div className={greenOff}></div>
-		</div>
-		<div className="d-flex justify-content-center">
-			<button className="btn btn-dark" onClick={() => setRed()}>Empezar</button>
 		</div>
 	</>);
 };

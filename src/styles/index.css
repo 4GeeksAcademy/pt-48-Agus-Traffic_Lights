@@ -5,11 +5,13 @@
   body {
     display: flex;
     justify-content: center;
-    margin-top: 13rem;
+    margin-top: 15rem;
     padding: 1rem;
     font-family: system-ui, sans-serif;
     color: black;
-    background-color: white;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(6,75,164,1) 56%);
+    height: 75vh;
   }
   
   h1 {

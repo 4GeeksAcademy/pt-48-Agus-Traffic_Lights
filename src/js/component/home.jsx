@@ -1,26 +1,51 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState, useEffect } from "react";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+	
+	/*useEffect(() => {
+		setRed()
+	})*/
+
+	const setRed = () => {
+        setTimeout(() => {
+          redUpdate("light red")
+          yellowUpdate("light black")
+          setGreen();
+        }, 1500)
+      }
+
+    const setGreen = () => {
+      setTimeout(() => {
+        redUpdate("light black")
+        greenUpdate("light green")
+        setYellow();
+      }, 3000)
+    }
+
+    const setYellow = () => {
+      setTimeout(() => {
+        redUpdate("light black")
+        yellowUpdate("light yellow")
+        greenUpdate("light black")
+        setRed();
+      }, 3000)
+    }
+
+  const [ redOff, redUpdate ] = useState("light black")
+  const [ yellowOff, yellowUpdate ] = useState("light black")
+  const [ greenOff, greenUpdate ] = useState("light black")
+
+	return (<>
+		<div className="traffic-light">
+			<div className={redOff}></div>
+			<div className={yellowOff}></div>
+			<div className={greenOff}></div>
 		</div>
-	);
+		<div className="d-flex justify-content-center">
+			<button className="btn btn-dark" onClick={() => setRed()}>Empezar</button>
+		</div>
+	</>);
 };
 
 export default Home;
